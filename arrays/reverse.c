@@ -1,18 +1,19 @@
 #include<stdio.h>
 int main()
 {
-	int a[5]={1,2,3,4,5};
-	int i;
-	/* original order
-	for(i=0;i<5;i++)
+	int n,i;
+	printf("enter the number of elements:\n");
+	scanf("%d",&n);
+	int arr[n];
+	printf("enter the input numbers:\n");
+	for(i = 0; i < n; i++)
 	{
-		printf("%d",a[i]);
-	}*/
-	printf("\n");
-	// reverse order 
-	for(i=4;i>=0;i--)
+		scanf("%d",&arr[i]);
+	}
+	printf("reverse elements:\n");
+	for(i = n-1; i >=0; i--)
 	{
-		printf("%d",a[i]);
+		printf("%d  ",arr[i]);
 	}
 	return 0;
 }
