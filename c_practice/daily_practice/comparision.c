@@ -16,51 +16,51 @@ int main()
 
 	if(a==b)
 	{
-		printf(" a==b print true\n");
+		printf("a==b true\n");
 	}
 	else
 	{
-		printf(" a==b print false\n");
+		printf("a==b false\n");
 	}
 	if(a!=b)
 	{
-		printf(" a!=b print true\n");
+		printf("a!=b true\n");
 	}
 	else
 	{
-		printf(" a!=b print false\n");
+		printf("a!=b false\n");
 	}
 	if(a<b)
 	{
-		printf(" a<b print true\n");
+		printf("a<b true\n");
 	}
 	else
 	{
-		printf("print false");
+		printf("a<b  false\n");
 	}
 	if(a>b)
 	{
-		printf("printf true\n");
+		printf("a>b  true\n");
 	}
 	else
 	{
-		printf("print false\n");
+		printf("a>b  false\n");
 	}
 	if(a<=b)
 	{
-		printf("print true\n");
+		printf("a<= true\n");
 	}
 	else
 	{
-		printf("print false\n");
+		printf("a<= false\n");
 	}
 	if(a>=b)
 	{
-		printf("print true\n");
+		printf("a>=b  true\n");
 	}
 	else
 	{
-		printf("print false\n");
+		printf("a>=b false\n");
 	}
 	return 0;
 }
