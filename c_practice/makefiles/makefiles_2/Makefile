@@ -1,4 +1,4 @@
-all: hello world 
+all: hello world siva dhanesh
 
 hello:
 	${CC} hello.c -o hello
