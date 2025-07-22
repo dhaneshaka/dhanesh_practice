@@ -4,7 +4,7 @@
 struct Node
 {
 	int data;
-	struct Node * next;
+	struct node * next;
 };
 
 int main()
