@@ -5,7 +5,7 @@ int main()
 	fork();
 	fork();
 	fork();
-	printf("hello world!\n PID=%d\n",getpid());
+	printf("hi hello world!\n PID=%d\n",getpid());
 	return 0;
 }
 
