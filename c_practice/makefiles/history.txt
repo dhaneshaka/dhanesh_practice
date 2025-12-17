@@ -1,0 +1,1000 @@
+ 1105  # Required for Debian Stretch
+ 1106  CONFIG_CONFIGFS_FS=y
+ 1107  CONFIG_SECURITYFS=y
+ 1108  make olddefconfig
+ 1109  make -j`nproc`
+ 1110  ls arch/x86_64/boot/bzImage
+ 1111  # from the source folder root
+ 1112  sudo apt-get install debootstrap
+ 1113  mkdir image && cd image
+ 1114  wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh
+ 1115  chmod +x create-image.sh
+ 1116  ./create-image.sh
+ 1117  ls
+ 1118  cd ..
+ 1119  cd
+ 1120  cd yoctotutor/
+ 1121  ls
+ 1122  cd viyara-imx-linux/
+ 1123  ls
+ 1124  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- vexpress_defconfig
+ 1125  sudo apt-get install qemu-system-arm
+ 1126  cd linux
+ 1127  cd linux-6.1.58
+ 1128  cd linux
+ 1129  make ARCH=arm CROSS_compile=../arm-gnu.toolchain\bin\arm-none-linux-gnueabihf- defconfig
+ 1130  make ARCH=arm CROSS_compile=../arm-gnu.toolchain\bin\arm-none-linux-gnueabihf- -j12
+ 1131  ls
+ 1132  ls arch/arm/boot
+ 1133  file arch/arm/boot/image
+ 1134  qemu
+ 1135  cd /
+ 1136  cd srv/tftp/
+ 1137  ls
+ 1138  cat testfile.txt 
+ 1139  clea
+ 1140  clear
+ 1141  exit
+ 1142  clea
+ 1143  clear
+ 1144  cd dhanesh_practice/
+ 1145  ls
+ 1146  cd arrays/
+ 1147  ls
+ 1148  vim q1.c
+ 1149  gcc q1.c -o q1
+ 1150  vim q1.c
+ 1151  gcc q1.c -o q1
+ 1152  vim q1.c
+ 1153  gcc q1.c -o q1
+ 1154  vim q1.c
+ 1155  gcc q1.c -o q1
+ 1156  vim q1.c
+ 1157  gcc q1.c -o q1
+ 1158  ./q1
+ 1159  2
+ 1160  ./q1
+ 1161  q2.c
+ 1162  vim q2.c
+ 1163  gcc q2.c -o q2
+ 1164  vim q2.c
+ 1165  gcc q2.c -o q2
+ 1166  vim q2.c
+ 1167  gcc q2.c -o q2
+ 1168  ./q2
+ 1169  vim q2.c
+ 1170  gcc q2.c -o q2
+ 1171  ./q2
+ 1172  vim q2.c
+ 1173  cd
+ 1174  sudo git status
+ 1175  cd dhanesh_practice/
+ 1176  cd arrays/
+ 1177  ls
+ 1178  rm q1:q2
+ 1179  rm q1
+ 1180  rm q2
+ 1181  ls
+ 1182  sudo git add .
+ 1183  sudo git commit -m"arrays"
+ 1184  sudo push origin main
+ 1185  sudo git push origin main
+ 1186  cd ..
+ 1187  cd bitwise/
+ 1188  ls
+ 1189  rm bit1
+ 1190  rm bit2
+ 1191  rm bit3
+ 1192  rm bit 4
+ 1193  rm bit4
+ 1194  rm bit5
+ 1195  rm bit6
+ 1196  ls
+ 1197  rm swapbit
+ 1198  rm swapbit1
+ 1199  ls
+ 1200  rm swapbit2
+ 1201  rm swapbit3
+ 1202  ls
+ 1203  clear
+ 1204  cd
+ 1205  cd yoctotutor/
+ 1206  cd viyara-imx-uboot/
+ 1207  ls
+ 1208  Connect MicroSD card to ubuntu PC
+ 1209  run the below command in uboot dir
+ 1210  sudo dd if=u-boot-dtb.imx of=/dev/sdX bs=1K seek=1 && sync
+ 1211  remove SDcard and connect to board.
+ 1212  power on board using Micro USB cable
+ 1213  make -j5
+ 1214  qemu-system-arm -machine virt -nographic -bios u-boot.bin
+ 1215  cd viyara-imx-uboot/
+ 1216  ls
+ 1217  cd configs/
+ 1218  ls
+ 1219  ls *qemu*
+ 1220  make qemu_arm_defconfig
+ 1221  sudo apt install qemu_arm_defconfig
+ 1222  sudo apt install make qemu_arm_defconfig
+ 1223  sudo install qemu_arm_defconfig
+ 1224  sudo apt install qemu_arm_defconfig
+ 1225  export ARCH=arm
+ 1226  export CROSS_COMPILE=arm-linux-gnueabihf-
+ 1227  make mrproper
+ 1228  Connect MicroSD card to ubuntu PC
+ 1229  sudo apt install connect
+ 1230  clear
+ 1231  ls
+ 1232  cd yoctotutor/
+ 1233  cd viyara-imx-uboot/
+ 1234  ls
+ 1235  cd linux
+ 1236  $ cd linux
+ 1237  make ARCH=arm CROSS_COMPILE=<PATH TO TOOLCHAIN>/arm-none-linux-gnueabi- vexpress_ca9x4_defconfig
+ 1238  $ make ARCH=arm CROSS_COMPILE=<PATH TO TOOLCHAIN>/arm-none-linux-gnueabi-
+ 1239  cklear
+ 1240  clear
+ 1241  sudo apt-get update
+ 1242  sudo  apt-get -y upgrade
+ 1243  For UBUNTU 20.04
+ 1244  *****************
+ 1245  for others you check gcc-  press TAB you will gcc get version
+ 1246  sudo apt-get install gcc-10-arm-linux-gnueabihf
+ 1247  sudo apt-get install gcc-10-arm-linux-gnueabihf-base
+ 1248  if you have issue with arm-linux-gnueabihf-gcc not found; then goto cd /usr/bin; sudo ln -sf arm-linux-gnueabihf-gcc-10 arm-linux-gnueabihf-gcc Other Ubuntu versions; *******************************************************; https://www.dropbox.com/scl/fi/sjrhails1jxorr5915p4e/fsl-imx-fb-glibc-x86_64-meta-toolchain-cortexa7t2hf-neon-mys-6ull-toolchain-5.10-gatesgarth.sh?rlkey=ystecozp00s288fpbnatmba7z&dl= chmod +x fsl-imx-fb-glibc-x86_64-meta-toolchain-cortexa7t2hf-neon-mys-6ull-toolchain-5.10-gatesgarth.sh; ./fsl-imx-fb-glibc-x86_64-meta-toolchain-cortexa7t2hf-neon-mys-6ull-toolchain-5.10-gatesgarth.sh source environment-setup-cortexa7t2hf-neon-poky-linux-gnueabi; in terminal type "arm-"  and press tab 2 times quickly to see toolchain
+ 1249  mkdir ~/yoctotutor
+ 1250  Connect MicroSD card to ubuntu PC
+ 1251  sudo apt install connect-proxy
+ 1252  Connect MicroSD card to ubuntu PC
+ 1253  sudo apt install connect
+ 1254  sudo apt update
+ 1255  sudo apt install connect
+ 1256  apt search connect
+ 1257  connect help
+ 1258  sudo apt update
+ 1259  sudo apt install connect
+ 1260  make
+ 1261  arm-linux-gnueabihf-gcc --version
+ 1262  arm-none-eabi-gcc --version
+ 1263  sudo apt install arm-none-eabi-gcc
+ 1264  sudo apt install gcc-arm-linux-gnueabihf
+ 1265  sudo apt install gcc-arm-none-eabi
+ 1266  export CROSS_COMPILE=arm-linux-gnueabihf-
+ 1267  export CROSS_COMPILE=arm-none-eabi-
+ 1268  make <board>_defconfig
+ 1269  make
+ 1270  -mtune=generic-armv7-a
+ 1271  -mtune=cortex-a9
+ 1272  make CFLAGS="-mtune=cortex-a9"
+ 1273  make distclean
+ 1274  make <board>_defconfig
+ 1275  make
+ 1276  export CROSS_COMPILE=arm-none-eabi-
+ 1277  make <board>_defconfig
+ 1278  make
+ 1279  -mtune=generic-armv7-a
+ 1280  -mtune=generic-armv7-a-mtune=generic-armv7-a-mtune=generic-armv7-a-mtune=generic-armv7-a-mtune=generic-armv7-a-mtune=generic-armv7-a-mtune=generic-armv7-a-mtune=generic-armv7-a
+ 1281  make
+ 1282  config
+ 1283  clear
+ 1284  c
+ 1285  cd
+ 1286  ls
+ 1287  vim sam.c 
+ 1288  rm v
+ 1289  rm v.c
+ 1290  ls
+ 1291  cds test/
+ 1292  cd test/
+ 1293  ls
+ 1294  clear
+ 1295  ls
+ 1296  cd
+ 1297  la
+ 1298  ld
+ 1299  la
+ 1300  ls
+ 1301  clear
+ 1302  ls
+ 1303  cd dhanesh_practice/
+ 1304  ls
+ 1305  cd arrays/
+ 1306  ls
+ 1307  vim q1.c 
+ 1308  cd
+ 1309  cd yoctotutor/
+ 1310  cd viyara-imx-uboot/
+ 1311  mkdir ~/yoctotutor
+ 1312  cd ~/yoctotutor
+ 1313  git clone https://github.com/viyaraembedded/viyara-imx-uboot.git
+ 1314  cd viyara-imx-uboot
+ 1315  git checkout imx_2020.04
+ 1316  setup toolchain
+ 1317  sudo apt install setop
+ 1318  export ARCH=arm
+ 1319  export CROSS_COMPILE=arm-linux-gnueabihf-
+ 1320  make mrproper
+ 1321  make ve_imx6ull_nand_ddr256_defconfig
+ 1322  make
+ 1323  Connect MicroSD card to ubuntu PC
+ 1324  sudo apt update
+ 1325  sudo apt install connect-proxy
+ 1326  apt-cache search connect
+ 1327  which connect
+ 1328  alias
+ 1329  echo $PATH
+ 1330  Connect MicroSD card to ubuntu PC
+ 1331  sudo apt install connect-proxy
+ 1332  Connect MicroSD card to ubuntu PC
+ 1333  sudo apt install connect-proxy (1.105-1) 
+ 1334  sudo apt install connect-proxy 1.105-1
+ 1335  sudo apt install connect-proxy 
+ 1336  run the below command in uboot dir
+ 1337  sudo dd if=u-boot-dtb.imx of=/dev/sdX bs=1K seek=1 && sync
+ 1338  remove SDcard and connect to board.
+ 1339  sudo apt install remote
+ 1340  clear
+ 1341  cd
+ 1342  \
+ 1343  ls
+ 1344  cd dhanesh_practice/
+ 1345  ls
+ 1346  cd arrays/
+ 1347  ls
+ 1348  vim reverse.c
+ 1349  gcc reverse.c -o reverse
+ 1350  vim reverse.c
+ 1351  gcc reverse.c -o reverse
+ 1352  vim reverse.c
+ 1353  gcc reverse.c -o reverse
+ 1354  ./reverse 
+ 1355  ls
+ 1356  vim q1.c 
+ 1357  ./q1
+ 1358  gcc q1.c -o q1
+ 1359  ./q1
+ 1360  ls
+ 1361  clear
+ 1362  vim q1.c 
+ 1363  vim storeelements.c
+ 1364  gcc storeelements.c -o storeelements
+ 1365  vim storeelements.c
+ 1366  gcc storeelements.c -o storeelements
+ 1367  ./storeelements 
+ 1368  vim storeelements.c
+ 1369  ls
+ 1370  vim array_sum.c
+ 1371  gcc array_sum.c -o array_sum
+ 1372  vim array_sum.c
+ 1373  gcc array_sum.c -o array_sum
+ 1374  vim array_sum.c
+ 1375  gcc array_sum.c -o array_sum
+ 1376  vim array_sum.c
+ 1377  gcc array_sum.c -o array_sum
+ 1378  ./array_sum 
+ 1379  vim array_sum.c
+ 1380  gcc array_sum.c -o array_sum
+ 1381  ./array_sum 
+ 1382  vim array_sum.c
+ 1383  gcc array_sum.c -o array_sum
+ 1384  ./array_sum 
+ 1385  vim array_sum.c
+ 1386  gcc array_sum.c -o array_sum
+ 1387  ./array_sum 
+ 1388  vim array_sum.c
+ 1389  gcc array_sum.c -o array_sum
+ 1390  ./array_sum 
+ 1391  cat array_sum.c 
+ 1392  vim reverse.c
+ 1393  gcc reverse.c -o reverse
+ 1394  vim reverse.c
+ 1395  gcc reverse.c -o reverse
+ 1396  ./reverse 
+ 1397  vim reverse.c
+ 1398  cd
+ 1399  sudo git add .
+ 1400  cd dhanesh_practice/
+ 1401  sudo git add .
+ 1402  sudo git add 
+ 1403  sudo git add.
+ 1404  clear
+ 1405  sudo git add .
+ 1406  sudo git commit -m"arrays
+ 1407  sudo git commit -m"arrays"
+ 1408  sudo git push origin main
+ 1409  clear
+ 1410  cd dhanesh_practice/
+ 1411  ls
+ 1412  cd arrays/
+ 1413  ls
+ 1414  clear
+ 1415  vim copy_elements.c
+ 1416  gcc copy_elements.c -o copy_elements
+ 1417  vim copy_elements.c
+ 1418  gcc copy_elements.c -o copy_elements
+ 1419  ./copy_elements 
+ 1420  vim copy_elements.c
+ 1421  gcc copy_elements.c -o copy_elements
+ 1422  vim copy_elements.c
+ 1423  gcc copy_elements.c -o copy_elements
+ 1424  vim copy_elements.c
+ 1425  gcc copy_elements.c -o copy_elements
+ 1426  ./copy_elements 
+ 1427  vim copy_elements.c
+ 1428  gcc copy_elements.c -o copy_elements
+ 1429  ./copy_elements 
+ 1430  vim copy_elements.c
+ 1431  gcc copy_elements.c -o copy_elements
+ 1432  ./copy_elements 
+ 1433  vim copy_elements.c
+ 1434  gcc copy_elements.c -o copy_elements
+ 1435  ./copy_elements 
+ 1436  vim copy_elements.c
+ 1437  gcc copy_elements.c -o copy_elements
+ 1438  ./copy_elements 
+ 1439  vim copy_elements.c
+ 1440  vim count_duplicate.c
+ 1441  gcc count_duplicate.c -o count_duplicate
+ 1442  vim count_duplicate.c
+ 1443  gcc count_duplicate.c -o count_duplicate
+ 1444  ./count_duplicate 
+ 1445  vim count_duplicate.c
+ 1446  gcc count_duplicate.c -o count_duplicate
+ 1447  ./count_duplicate 
+ 1448  vim count_duplicate.c
+ 1449  gcc count_duplicate.c -o count_duplicate
+ 1450  ./count_duplicate 
+ 1451  cat count_duplicate.c
+ 1452  vim count_duplicate.c
+ 1453  gcc count_duplicate.c -o count_duplicate
+ 1454  vim count_duplicate.c
+ 1455  clear
+ 1456  cd dhanesh_practice/
+ 1457  ls
+ 1458  cd practicequestions/
+ 1459  ls
+ 1460  cd ..
+ 1461  mkdir Structure questions
+ 1462  mkdir Structure_questions
+ 1463  cd Structure_questions/
+ 1464  ls
+ 1465  clear
+ 1466  cd ..
+ 1467  ls
+ 1468  clear
+ 1469  ls
+ 1470  cd practicequestions/
+ 1471  ls
+ 1472  cd ..
+ 1473  cd questions/
+ 1474  ls
+ 1475  cd ..
+ 1476  c q1/
+ 1477  cd q1/
+ 1478  ls
+ 1479  cd ..
+ 1480  cd question2/
+ 1481  ls
+ 1482  cd ..
+ 1483  cd question5/
+ 1484  ls
+ 1485  cleR
+ 1486  CLEAR
+ 1487  clear
+ 1488  cd ..
+ 1489  cd arrays/
+ 1490  ls
+ 1491  vim q1.c 
+ 1492  lds
+ 1493  ls
+ 1494  vim reverse.c 
+ 1495  gcc reverse.c -o reverse
+ 1496  ./reverse 
+ 1497  vim reverse.c 
+ 1498  gcc reverse.c -o reverse
+ 1499  ./reverse 
+ 1500  vim reverse.c 
+ 1501  gcc reverse.c -o reverse
+ 1502  vim reverse.c 
+ 1503  gcc reverse.c -o reverse
+ 1504  ./reverse 
+ 1505  ls
+ 1506  vim array_sum.c 
+ 1507  gcc array_sum.c -o array_sum
+ 1508  vim array_sum.c 
+ 1509  gcc array_sum.c -o array_sum
+ 1510  vim array_sum.c 
+ 1511  gcc array_sum.c -o array_sum
+ 1512  vim array_sum.c 
+ 1513  gcc array_sum.c -o array_sum
+ 1514  vim array_sum.c 
+ 1515  gcc array_sum.c -o array_sum
+ 1516  ./array_sum 
+ 1517  vim array_sum.c 
+ 1518  gcc array_sum.c -o array_sum
+ 1519  ./array_sum 
+ 1520  vim array_sum.c 
+ 1521  gcc array_sum.c -o array_sum
+ 1522  ./array_sum 
+ 1523  vim array_sum.c 
+ 1524  gcc array_sum.c -o array_sum
+ 1525  ./array_sum 
+ 1526  ls
+ 1527  vim copy_elements.c 
+ 1528  gcc copy_elements.c -o copy_elements 
+ 1529  vim copy_elements.c 
+ 1530  gcc copy_elements.c -o copy_elements 
+ 1531  ./copy_elements 
+ 1532  vim copy_elements.c 
+ 1533  gcc copy_elements.c -o copy_elements 
+ 1534  ./copy_elements 
+ 1535  vim copy_elements.c 
+ 1536  clear
+ 1537  ls
+ 1538  cd dhanesh_practice/
+ 1539  ls
+ 1540  cd arrays/
+ 1541  LS
+ 1542  ls
+ 1543  vim count_duplicate.c 
+ 1544  cd dhanesh_practice/
+ 1545  ls
+ 1546  cd arrays/
+ 1547  ls
+ 1548  vim count_duplicate.c 
+ 1549  cd dhanesh_practice/
+ 1550  cd arrays/
+ 1551  ls
+ 1552  rm count_duplicate.c 
+ 1553  rm count_duplicate
+ 1554  ls
+ 1555  count_duplicate_elements.c
+ 1556  vim count_duplicate_elements.c
+ 1557  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1558  vim count_duplicate_elements.c
+ 1559  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1560  vim count_duplicate_elements.c
+ 1561  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1562  vim count_duplicate_elements.c
+ 1563  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1564  vim count_duplicate_elements.c
+ 1565  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1566  vim count_duplicate_elements.c
+ 1567  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1568  ./count_duplicate_elements 
+ 1569  vim count_duplicate_elements.c
+ 1570  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1571  ./count_duplicate_elements 
+ 1572  vim count_duplicate_elements.c
+ 1573  gcc count_duplicate_elements.c -o count_duplicate_elements
+ 1574  ./count_duplicate_elements 
+ 1575  vim unique_elements.c
+ 1576  gcc unique_elements.c -o unique_elements
+ 1577  vim unique_elements.c
+ 1578  gcc unique_elements.c -o unique_elements
+ 1579  ./unique_elements 
+ 1580  2
+ 1581  ./unique_elements 
+ 1582  2
+ 1583  ./unique_elements 
+ 1584  vim unique_elements.c
+ 1585  gcc unique_elements.c -o unique_elements
+ 1586  ./unique_elements 
+ 1587  vim unique_elements.c
+ 1588  gcc unique_elements.c -o unique_elements
+ 1589  ./unique_elements 
+ 1590  vim unique_elements.c
+ 1591  gcc unique_elements.c -o unique_elements
+ 1592  ./unique_elements 
+ 1593  vim unique_elements.c
+ 1594  gcc unique_elements.c -o unique_elements
+ 1595  ./unique_elements 
+ 1596  clear
+ 1597  cd dhanesh_practice/
+ 1598  sudo git add .
+ 1599  sudo git commit"arrays"
+ 1600  sudo git commit -m"arrays"
+ 1601  sudo git push origin main
+ 1602  ls
+ 1603  cd Structure_questions/
+ 1604  ls
+ 1605  cleat
+ 1606  clear
+ 1607  cd dhanesh_practice/
+ 1608  cd Structure
+ 1609  ls
+ 1610  vim car.c
+ 1611  gcc car.c -o car
+ 1612  ./car
+ 1613  vim car.c
+ 1614  gcc car.c -o car
+ 1615  ./car
+ 1616  ls
+ 1617  vim student.c
+ 1618  gcc student.c -o student
+ 1619  ./student 
+ 1620  vim student.c
+ 1621  clear
+ 1622  cd dhanesh_practice/
+ 1623  ls
+ 1624  mkdir pointers
+ 1625  ls
+ 1626  cd pointers/
+ 1627  ls
+ 1628  vim sum_arry.c
+ 1629  gcc sum_arry.c -o sum_arry
+ 1630  ./sum_arry 
+ 1631  vim sum_arry.c
+ 1632  ls
+ 1633  rm sum_arry
+ 1634  ls
+ 1635  cd
+ 1636  cd dhanesh_practice/
+ 1637  sudo git status
+ 1638  sudo git add .
+ 1639  sudo git commit -m"pointers"
+ 1640  sudo push main origin main
+ 1641  sudo git push main origin main
+ 1642  clear
+ 1643  ls
+ 1644  cd pointers/
+ 1645  sudo git add
+ 1646  sudo git add .
+ 1647  sudo git commit -m"pointers"
+ 1648  sudo git push origin main
+ 1649  cd ..
+ 1650  sudo git add .
+ 1651  sudo git commit -m"Structures"
+ 1652  sudo push main origin
+ 1653  ls
+ 1654  cd Structure
+ 1655  ls
+ 1656  cd dhanesh_practice/
+ 1657  ls
+ 1658  cd Structure_questions/
+ 1659  ls
+ 1660  clear
+ 1661  ls
+ 1662  cd dhanesh_practice/
+ 1663  ls
+ 1664  cd
+ 1665  git add .
+ 1666  sudo git add .
+ 1667  sudo git commit
+ 1668  sudo git commit -m"pointers"
+ 1669  sudo push main origin
+ 1670  sudo git push main origin
+ 1671  clear
+ 1672  cd dhanesh_practice/
+ 1673  ls
+ 1674  cd pointers/
+ 1675  ls
+ 1676  vim dynamic_array.c
+ 1677  gcc dynamic_array.c -o dynamic_array
+ 1678  vim dynamic_array.c
+ 1679  gcc dynamic_array.c -o dynamic_array
+ 1680  vim dynamic_array.c
+ 1681  gcc dynamic_array.c -o dynamic_array
+ 1682  vim dynamic_array.c
+ 1683  gcc dynamic_array.c -o dynamic_array
+ 1684  vim dynamic_array.c
+ 1685  gcc dynamic_array.c -o dynamic_array
+ 1686  vim dynamic_array.c
+ 1687  gcc dynamic_array.c -o dynamic_array
+ 1688  vim dynamic_array.c
+ 1689  gcc dynamic_array.c -o dynamic_array
+ 1690  ./dynamic_array 
+ 1691  vim dynamic_array.c
+ 1692  gcc dynamic_array.c -o dynamic_array
+ 1693  ./dynamic_array 
+ 1694  vim dynamic_array.c
+ 1695  gcc dynamic_array.c -o dynamic_array
+ 1696  ./dynamic_array 
+ 1697  vim dynamic_array.c
+ 1698  gcc dynamic_array.c -o dynamic_array
+ 1699  ./dynamic_array 
+ 1700  5
+ 1701  ./dynamic_array 
+ 1702  vim dynamic_array.c
+ 1703  gcc dynamic_array.c -o dynamic_array
+ 1704  ./dynamic_array 
+ 1705  vim pointer.c
+ 1706  gcc pointer.c -o pointer
+ 1707  vim pointer.c
+ 1708  gcc pointer.c -o pointer
+ 1709  vim pointer.c
+ 1710  gcc pointer.c -o pointer
+ 1711  vim pointer.c
+ 1712  gcc pointer.c -o pointer
+ 1713  vim pointer.c
+ 1714  gcc pointer.c -o pointer
+ 1715  ./pointer 
+ 1716  vim pointer.c
+ 1717  gcc pointer.c -o pointer
+ 1718  ./pointer 
+ 1719  vim pointer.c
+ 1720  gcc pointer.c -o pointer
+ 1721  vim pointer.c
+ 1722  gcc pointer.c -o pointer
+ 1723  vim pointer.c
+ 1724  gcc pointer.c -o pointer
+ 1725  ./pointer 
+ 1726  vim malloc.c
+ 1727  gcc malloc.c -o malloc
+ 1728  ./malloc 
+ 1729  cd ..
+ 1730  git status
+ 1731  cd pointers/
+ 1732  ls
+ 1733  rm dynamic_array
+ 1734  rm malloc
+ 1735  rm pointer
+ 1736  ls
+ 1737  cd .
+ 1738  cd ..
+ 1739  git status
+ 1740  sudo git add .
+ 1741  sudo git commit -m"pointers"
+ 1742  sudo git push main origin
+ 1743  sudo git push origin main
+ 1744  clear
+ 1745  cd dhanesh_practice/
+ 1746  ls
+ 1747  cd Structure
+ 1748  ls
+ 1749  vim student.c 
+ 1750  vim time_min_sec_hrs.c
+ 1751  gcc  time_min_sec_hrs.c -o time_min_sec_hrs
+ 1752  ./time_min_sec_hrs 
+ 1753  vim book_author_price.c
+ 1754  gcc book_author_p
+ 1755  ./book_author_price 
+ 1756  cd ..
+ 1757  git status
+ 1758  cd Structure
+ 1759  ls
+ 1760  rm book_author_price
+ 1761  rm car
+ 1762  rm student
+ 1763  rm time_min_sec_hrs
+ 1764  ls
+ 1765  cd ..
+ 1766  git status
+ 1767  sudo git add .
+ 1768  sudo git commit -m"Structure"
+ 1769  sudo git push origin main
+ 1770  vim book_author_price.c
+ 1771  cd Structure
+ 1772  ls
+ 1773  vim time_min_sec_hrs.c 
+ 1774  string
+ 1775  cd dhanesh_practice/
+ 1776  clear
+ 1777  ls
+ 1778  mkdir strings
+ 1779  ls
+ 1780  cd strings/
+ 1781  ls
+ 1782  clear
+ 1783  vim strlen.c
+ 1784  man strlen
+ 1785  vim strlen.c
+ 1786  gcc strlen.c -o strlen
+ 1787  vim strlen.c
+ 1788  gcc strlen.c -o strlen
+ 1789  ./strlen 
+ 1790  vim strlen.c
+ 1791  vim strlen_1.c
+ 1792  man strlen
+ 1793  vim strlen_1.c
+ 1794  gcc strlen_1.c -o strlen_1
+ 1795  vim strlen_1.c
+ 1796  gcc strlen_1.c -o strlen_1
+ 1797  vim strlen_1.c
+ 1798  gcc strlen_1.c -o strlen_1
+ 1799  vim strlen_1.c
+ 1800  gcc strlen_1.c -o strlen_1
+ 1801  vim strlen_1.c
+ 1802  gcc strlen_1.c -o strlen_1
+ 1803  vim strlen_1.c
+ 1804  gcc strlen_1.c -o strlen_1
+ 1805  vim strlen_1.c
+ 1806  gcc strlen_1.c -o strlen_1
+ 1807  vim strlen_1.c
+ 1808  gcc strlen_1.c -o strlen_1
+ 1809  vim strlen_1.c
+ 1810  gcc strlen_1.c -o strlen_1
+ 1811  vim strlen_1.c
+ 1812  gcc strlen_1.c -o strlen_1
+ 1813  ./strlen_1 
+ 1814  vim strlen_1.c
+ 1815  git status
+ 1816  cd ..
+ 1817  git status
+ 1818  cd strings/
+ 1819  ls
+ 1820  rm strlen
+ 1821  rm strlen_1
+ 1822  ls
+ 1823  cd ,=..
+ 1824  cd ..
+ 1825  sudo git add .
+ 1826  sudo git commit -m"strings/"
+ 1827  sudo git push origin main
+ 1828  vim strlen_1.c
+ 1829  cd strings/
+ 1830  ls
+ 1831  vim strlen_1.c 
+ 1832  clear
+ 1833  cd dhanesh_practice/
+ 1834  cd strings/
+ 1835  ls
+ 1836  cd ..
+ 1837  ls
+ 1838  cd strings/
+ 1839  ls
+ 1840  vim ascii_integer.c
+ 1841  gcc ascii_integer.c -o ascii_integer
+ 1842  ./ ascii_integer
+ 1843  ./ascii_integer
+ 1844  vim ascii_integer.c
+ 1845  clear
+ 1846  cd dhanesh_practice/
+ 1847  cd pointers/
+ 1848  ls
+ 1849  string_dynamically.c
+ 1850  vim string_dynamically.c
+ 1851  gcc string_dynamically.c -o string_dynamically
+ 1852  ./string_dynamically 
+ 1853  cd ..
+ 1854  cd pointers/
+ 1855  ls
+ 1856  rm string_dynamically
+ 1857  ls
+ 1858  git status
+ 1859  git add
+ 1860  sudo git add .
+ 1861  sudo git commit"string_dynamically.c",
+ 1862  sudo git commit -m"string_dynamically.c",
+ 1863  sudo push origin main
+ 1864  sudo git push origin main
+ 1865  git status
+ 1866  cd ..
+ 1867  sudo git commit -m"ascii_integer
+ 1868  sudo git commit -m"ascii_integer"
+ 1869  clear
+ 1870  cd dhanesh_practice/
+ 1871  ls
+ 1872  mkdir sorting_algorithms
+ 1873  cd sorting_algorithms/
+ 1874  ld
+ 1875  ls
+ 1876  man sorting
+ 1877  clear
+ 1878  gcc bubble_sort.c -o bubble_sort
+ 1879  cat bubble_sort.c 
+ 1880  vim bubble_sort.c 
+ 1881  gcc bubble_sort.c -o bubble_sort
+ 1882  vim bubble_sort.c 
+ 1883  gcc bubble_sort.c -o bubble_sort
+ 1884  vim bubble_sort.c 
+ 1885  gcc bubble_sort.c -o bubble_sort
+ 1886  vim bubble_sort.c 
+ 1887  gcc bubble_sort.c -o bubble_sort
+ 1888  vim bubble_sort.c 
+ 1889  gcc bubble_sort.c -o bubble_sort
+ 1890  vim bubble_sort.c 
+ 1891  gcc bubble_sort.c -o bubble_sort
+ 1892  vim bubble_sort.c 
+ 1893  gcc bubble_sort.c -o bubble_sort
+ 1894  ./bubble_sort 
+ 1895  vim bubble_sort.c 
+ 1896  cd dhanesh_practice/
+ 1897  cd sorting_algorithms/
+ 1898  ls
+ 1899  vim bubble_sort
+ 1900  cd dhanesh_practice/
+ 1901  cd sorting_algorithms/
+ 1902  ls
+ 1903  vim bubble_sort
+ 1904  clear
+ 1905  vim bubble_sort
+ 1906  clear
+ 1907  cd ..
+ 1908  git status
+ 1909  git add .
+ 1910  sudo git add .
+ 1911  sudo git commit -m"sorting_algorithms"
+ 1912  cd sorting_algorithms/
+ 1913  ls
+ 1914  rm bubble_sort
+ 1915  sudo git commit -m"sorting_algorithms"
+ 1916  sudo git commit -m"sorting_algorithms"cd ..
+ 1917  cd ..
+ 1918  sudo git add .
+ 1919  sudo git commit -m"sorting_algorithms"
+ 1920  sudo git push origin main
+ 1921  clea
+ 1922  clear
+ 1923  cd dhanesh_practice/
+ 1924  cd sorting_algorithms/
+ 1925  ls
+ 1926  mkdir searching algorithm
+ 1927  vim binary_sorting.c
+ 1928  gcc binary_sorting.c -o binary_sorting
+ 1929  vim binary_sorting.c
+ 1930  gcc binary_sorting.c -o binary_sorting
+ 1931  vim binary_sorting.c
+ 1932  gcc binary_sorting.c -o binary_sorting
+ 1933  vim binary_sorting.c
+ 1934  gcc binary_sorting.c -o binary_sorting
+ 1935  ./binary_sorting 
+ 1936  vim binary_sorting.c
+ 1937  gcc binary_sorting.c -o binary_sorting
+ 1938  ./binary_sorting 
+ 1939  vim binary_sorting.c
+ 1940  git status
+ 1941  ls
+ 1942  cd searching/
+ 1943  ls
+ 1944  rm searching
+ 1945  ls
+ 1946  cd ..
+ 1947  rm searching/
+ 1948  ls
+ 1949  rm binary_sorting
+ 1950  ls
+ 1951  git status
+ 1952  sudo git add .
+ 1953  sudo git commit"binary_sorting.c"
+ 1954  sudo git commit -m"binary_sorting.c"
+ 1955  sudo git push origin main
+ 1956  clear
+ 1957  cd dhanesh_practice/
+ 1958  cd sorting_algorithms/
+ 1959  ls
+ 1960  vim bubble_sort_1.c
+ 1961  gcc bubble_sort_1.c -o bubble_sort_1
+ 1962  ./bubble_sort_1 
+ 1963  cd ..
+ 1964  git status
+ 1965  cd sorting_algorithms/
+ 1966  ls
+ 1967  rm bubble_sort_1
+ 1968  cd ..
+ 1969  sudo git add .
+ 1970  sudo git commit -m"sorting_algorithms"
+ 1971  sudo git push origin main
+ 1972  clear
+ 1973  cd dhanesh_practice/
+ 1974  cd ..
+ 1975  ls
+ 1976  cd dhanesh_practice/
+ 1977  mkdir makefiles
+ 1978  cd makefiles/
+ 1979  vim hello.c
+ 1980  gcc hello.c -o hello
+ 1981  ./hello 
+ 1982  vim compail.sh
+ 1983  sh compail.sh 
+ 1984  vim compail.sh
+ 1985  sh compail.sh 
+ 1986  vim compail.sh
+ 1987  sh compail.sh 
+ 1988  which ls
+ 1989  who
+ 1990  echo $USER
+ 1991  host name
+ 1992  hostname
+ 1993  ls - al
+ 1994  ls -al
+ 1995  ./compail.sh
+ 1996  chmod 777 compail.sh
+ 1997  ls -al
+ 1998  ./compail.sh 
+ 1999  ls
+ 2000  pwd
+ 2001  rm hello
+ 2002  ls
+ 2003  vim compail.sh 
+ 2004  gcc compail.sh -o compail.sh
+ 2005  gcc compail.sh -o compail
+ 2006  vim compail.sh 
+ 2007  ./compail.sh 
+ 2008  ls
+ 2009  vim compail.sh 
+ 2010  ./compail.sh 
+ 2011  vim compail.sh 
+ 2012  ./compail.sh 
+ 2013  vim compail.sh 
+ 2014  ./compail.sh 
+ 2015  vim compail.sh 
+ 2016  ./compail.sh 
+ 2017  vim compail.sh 
+ 2018  ./compail.sh 
+ 2019  vim compail.sh 
+ 2020  ./compail.sh 
+ 2021  vim compail.sh 
+ 2022  ./compail.sh 
+ 2023  vim compail.sh 
+ 2024  ./compail.sh 
+ 2025  vim compail.sh 
+ 2026  ./compail.sh 
+ 2027  vim compail.sh 
+ 2028  ./compail.sh 
+ 2029  cpp
+ 2030  $1
+ 2031  ls
+ 2032  vim compail.sh 
+ 2033  vim text.sh
+ 2034  ./text.sh
+ 2035  ls -al
+ 2036  chmod 777 text.sh 
+ 2037  ls
+ 2038  ./text.sh 
+ 2039  ./text.sh
+ 2040  vim text.sh
+ 2041  ./text.sh
+ 2042  vim text.sh
+ 2043  ./text.sh siva
+ 2044  vim text.sh
+ 2045  ./text.sh siva
+ 2046  ./text.sh 
+ 2047  vim text.sh
+ 2048  ./text.sh 
+ 2049  vim text.sh
+ 2050  ./text.sh 
+ 2051  ./text.sh hello.cpp
+ 2052  vim text.sh
+ 2053  ./text.sh hello.cpp
+ 2054  vim yacto.txt
+ 2055  ls
+ 2056  touchfan.txt
+ 2057  ls
+ 2058  touch fan.txt
+ 2059  ls
+ 2060  echo "hello" > fan.txt 
+ 2061  ls
+ 2062  cat fan.txt 
+ 2063  echo "world" > fan.txt 
+ 2064  cat fan.txt 
+ 2065  echo "world" >> fan.txt 
+ 2066  echo "yocto" >> fan.txt 
+ 2067  cat fan.txt 
+ 2068  echo "yocto" >> fan.txt 
+ 2069  cat fan.txt 
+ 2070  echo "yocto" >> fan.txt 
+ 2071  cat fan.txt 
+ 2072  figlet
+ 2073  sudo apt install figlet
+ 2074  figlet
+ 2075  figlet dhanesh
+ 2076  toilet
+ 2077  sudo apt install toilet
+ 2078* 
+ 2079  figlet --help
+ 2080  LS
+ 2081  figlet dhanesh > fan.txt
+ 2082  ls
+ 2083  cat fan.txt 
+ 2084  showfigfonts 
+ 2085  figlet -f slant >>fan.txt
+ 2086  figlet -f slant dhanesh >>fan.txt
+ 2087  cat fan.txt 
+ 2088  figlet -f slant dhanesh >fan.txt
+ 2089  cat fan.txt 
+ 2090  figlet -f slant "dh  anesh" >fan.txt
+ 2091  cat fan.txt 
+ 2092  figlet -f slant "d h a n e s h" >fan.txt
+ 2093  cat fan.txt 
+ 2094  LS
+ 2095  sudo apt install LS
+ 2096  sl
+ 2097  sudo apt install sl
+ 2098  sl
+ 2099  history 
+ 2100  ls >text.txt
+ 2101  ls
+ 2102  text.txt
+ 2103  cat text.txt
+ 2104  history >history.txt

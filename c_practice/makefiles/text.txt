@@ -1,0 +1,7 @@
+compail.sh
+fan.txt
+hello
+hello.c
+text.sh
+text.txt
+yacto.txt
