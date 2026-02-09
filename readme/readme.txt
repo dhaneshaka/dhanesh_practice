@@ -15,7 +15,7 @@
 3) i ahve done the project led blinking with button .
 
 ==================================================================
-03-02-2026
+03-02-2026 & 04-02-2026
 -------------------------------------------------------------------
 1) i have worked on OLED through stm32
 
@@ -25,4 +25,8 @@
 1) i have worked on DHT11 sensor and  OLED using with STM32
 2) i have worked on DHT11 sensor with STM32 using USART
 ===================================================================
- 
+06-02-2026 & 07-02-2026
+------------------------------------------------------------------
+1) i have worked on SPI to send data from one board to another board
+2) i have worked on SPI to read the temperature and humidity with DHT11 sensor.
+==================================================================
