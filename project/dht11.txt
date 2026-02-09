@@ -1,0 +1,96 @@
+
+DHT11 sensor
+================================================
+
+
+       1)This project is about reading temperature and humidity using a DHT11 sensor and sending the data to a
+	 PC using  STM32F401 microcontroller boards.
+
+       2)In this project, the first STM32F401 board works as a sensor board.
+	
+       3) It is connected to a DHT11 sensor and reads the temperature and humidity values at regular time intervals.
+	
+       4) After reading the sensor data, this board sends the information to the second STM32F401 board using SPI communication.
+
+       5)The second STM32F401 board works as a receiver board. It receives the data from the first board through SPI and then
+         sends the same data to a PC by using UART communication.
+       6) On the PC, the data can be seen on a serial terminal, which helps in monitoring the temperature
+          and humidity in real time.
+
+
+================================================
+DHT11.c
+===============================================
+ 
+ 
+#define DHT_PORT GPIOA
+#define DHT_PIN  GPIO_PIN_1
+
+extern TIM_HandleTypeDef htim1;
+
+static void delay_us(uint16_t us)
+{
+    __HAL_TIM_SET_COUNTER(&htim1, 0);
+    while (__HAL_TIM_GET_COUNTER(&htim1) < us);
+}
+
+void DHT11_Read_Data(uint8_t *temp, uint8_t *hum)
+{
+    uint8_t data[5] = {0};
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    /* OUTPUT */
+    GPIO_InitStruct.Pin = DHT_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(DHT_PORT, &GPIO_InitStruct);
+
+    HAL_GPIO_WritePin(DHT_PORT, DHT_PIN, GPIO_PIN_RESET);
+    HAL_Delay(18);
+    HAL_GPIO_WritePin(DHT_PORT, DHT_PIN, GPIO_PIN_SET);
+    delay_us(30);
+
+    /* INPUT */
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    HAL_GPIO_Init(DHT_PORT, &GPIO_InitStruct);
+
+    while (HAL_GPIO_ReadPin(DHT_PORT, DHT_PIN));
+    while (!HAL_GPIO_ReadPin(DHT_PORT, DHT_PIN));
+    while (HAL_GPIO_ReadPin(DHT_PORT, DHT_PIN));
+
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            while (!HAL_GPIO_ReadPin(DHT_PORT, DHT_PIN));
+            delay_us(40);
+            if (HAL_GPIO_ReadPin(DHT_PORT, DHT_PIN))
+                data[i] |= (1 << (7 - j));
+            while (HAL_GPIO_ReadPin(DHT_PORT, DHT_PIN));
+        }
+    }
+
+    if (data[4] == (data[0] + data[1] + data[2] + data[3]))
+    {
+        *hum  = data[0];
+        *temp = data[2];
+    }
+}
+
+===========================================================
+DHT11.h
+-----------------------------------------------------------
+	   #ifndef __DHT11_H
+           #define __DHT11_H
+
+           #include "stm32f4xx_hal.h"
+
+           void DHT11_Read_Data(uint8_t *temp, uint8_t *hum);
+
+           #endif
+===========================================================
+
+
+
+
+
