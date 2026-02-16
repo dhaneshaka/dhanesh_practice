@@ -19,15 +19,15 @@ int main()
             printf("  ");
 
         // Right numbers
-	
+
         for (j = i; j <= n; j++)
-	{
-		if(j==1)
-		{
-			continue;
-		}
+        {
+                if(j==1)
+                {
+                        continue;
+                }
             printf("%d ", j);
-	}
+        }
         printf("\n");
     }
 
@@ -51,4 +51,5 @@ int main()
 
     return 0;
 }
+
 
